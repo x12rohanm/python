@@ -1,0 +1,22 @@
+name: app
+
+
+type: "python:3.7"
+
+
+dependencies:
+    python:
+        pipenv: "2018.10.13"
+
+
+hooks:
+    build: |
+      pipenv install --system --deploy
+
+
+disk: 1024
+
+
+web:
+    commands:
+        start: python server.py
