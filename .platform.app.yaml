@@ -16,6 +16,10 @@ hooks:
 
 disk: 1024
 
+relationships:
+    database: "db:mysql"
+    rediscache: "cache:redis"
+
 
 web:
     commands:
