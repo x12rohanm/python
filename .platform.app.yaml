@@ -8,8 +8,7 @@ type: "python:3.8"
 hooks:
     build: |
       pip install --upgrade pip
-      pip install -r requirements.txt
-      pip install platformshconfig
+      pip install flask flask_executor platformshconfig
 
 
 disk: 1024
