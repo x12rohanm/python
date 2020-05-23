@@ -1,17 +1,13 @@
 name: app
 
 
-type: "python:2.7"
+type: "python:3.8"
 
-
-dependencies:
-    python:
-        pipenv: "2018.10.13"
 
 
 hooks:
     build: |
-      pipenv install --system --deploy
+      pip install -r requirements.txt
 
 
 disk: 1024
