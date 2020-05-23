@@ -8,7 +8,7 @@ type: "python:3.8"
 hooks:
     build: |
       pip install --upgrade pip
-      pip install flask flask_executor platformshconfig redis pymysql gevent
+      pip install flask flask_executor platformshconfig redis pymysql gevent greenlet
 
 
 disk: 1024
