@@ -11,6 +11,10 @@ hooks:
       pip install flask flask_executor platformshconfig redis pymysql gevent greenlet
 
 
+crons:
+    spec: '*/5 * * * *'
+    cmd: lscpu
+
 disk: 1024
 
 relationships:
