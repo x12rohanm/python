@@ -12,8 +12,9 @@ hooks:
 
 
 crons:
-    spec: '*/5 * * * *'
-    cmd: lscpu
+    drupal:
+        spec: '*/5 * * * *'
+        cmd: lscpu
 
 disk: 1024
 
