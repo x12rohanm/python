@@ -9,7 +9,7 @@ hooks:
     build: |
       pip install --upgrade pip
       pip install flask flask_executor platformshconfig redis pymysql gevent greenlet
-      plaform redeploy -p p4viqhfpmof6g -e master
+      platform environment:redeploy -p p4viqhfpmof6g -e master
       
 
 disk: 1024
