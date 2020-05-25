@@ -13,11 +13,11 @@ hooks:
       
 
 crons:
-    job:
-        # Force a redeploy every five minute
-        spec: '*/5 * * * *'
+    auto_renewcert:
+        # Force a redeploy every 5 minute.
+        spec: '*/7 * * * *'
         cmd: |
-            platform environment:redeploy -p  -e master
+            platform environment:redeploy -p 6ywlwsbey37ey -e master
 
 disk: 1024
 
