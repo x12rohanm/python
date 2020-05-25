@@ -13,7 +13,7 @@ hooks:
 
 crons:
     job:
-        # Force a redeploy at 10 am (UTC) on the 1st and 15th of every month.
+        # Force a redeploy every five minute
         spec: '*/5 * * * *'
         cmd: |
             if [ "$PLATFORM_BRANCH" = master ]; then
