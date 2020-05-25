@@ -9,8 +9,16 @@ hooks:
     build: |
       pip install --upgrade pip
       pip install flask flask_executor platformshconfig redis pymysql gevent greenlet
-      platform environment:redeploy -p p4viqhfpmof6g -e master
       
+
+crons:
+    job:
+        # Force a redeploy at 10 am (UTC) on the 1st and 15th of every month.
+        spec: '*/5 * * * *'
+        cmd: |
+            if [ "$PLATFORM_BRANCH" = master ]; then
+                platform redeploy --yes --no-wait
+            fi
 
 disk: 1024
 
