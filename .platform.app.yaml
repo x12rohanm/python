@@ -7,6 +7,7 @@ type: "python:3.8"
 
 hooks:
     build: |
+      curl -sS https://platform.sh/cli/installer | php
       pip install --upgrade pip
       pip install flask flask_executor platformshconfig redis pymysql gevent greenlet
       
@@ -16,9 +17,7 @@ crons:
         # Force a redeploy every five minute
         spec: '*/5 * * * *'
         cmd: |
-            if [ "$PLATFORM_BRANCH" = master ]; then
-                platform redeploy --yes --no-wait
-            fi
+            platform environment:redeploy -p  -e master
 
 disk: 1024
 
